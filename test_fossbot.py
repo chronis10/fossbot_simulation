@@ -52,14 +52,14 @@ if clientID!=-1:
     #Forward -0.2 
     err_code = sim.simxSetJointTargetVelocity(clientID,left_motor,-0.2,sim.simx_opmode_streaming)
     err_code = sim.simxSetJointTargetVelocity(clientID,right_motor,-0.2,sim.simx_opmode_streaming)
-    time.sleep(1)
+    time.sleep(5)
     err_code = sim.simxSetJointTargetVelocity(clientID,left_motor,0,sim.simx_opmode_streaming)
     err_code = sim.simxSetJointTargetVelocity(clientID,right_motor,0,sim.simx_opmode_streaming)
     time.sleep(1)
 
 
     #Ultrasonic sensor get distance
-    #for i in range(0,10):
+    for i in range(0,10):
         _,detectionState,detectedPoint,detectedObjectHandle, detectedSurfaceNormalVector=sim.simxReadProximitySensor(clientID, ultrasonic,sim.simx_opmode_streaming)  
         print(detectedPoint)
         time.sleep(1)
